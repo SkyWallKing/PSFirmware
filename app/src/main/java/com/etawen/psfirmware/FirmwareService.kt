@@ -60,6 +60,7 @@ class FirmwareService : Service() {
         if (executor.isShutdown) return
         executor.execute {
             if (FirmwareUpdater.refreshIfStale(this, minAgeMs)) FirmwareUpdater.scheduleNext(this)
+            UpdateChecker.checkIfDue(this, UpdateChecker.PERIODIC_INTERVAL_MS)
             val delay = (FirmwareUpdater.INTERVAL_MS - FirmwareUpdater.sinceLastAttempt(this))
                 .coerceIn(MIN_TICK_MS, FirmwareUpdater.INTERVAL_MS)
             handler.removeCallbacks(tick)

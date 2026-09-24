@@ -27,8 +27,9 @@ A small Android app that keeps an **ongoing notification** with the current Play
 - **Updates every 5 minutes** while the phone is awake, and right away when you turn on or unlock the screen. An alarm acts as a fallback while the phone is asleep.
 - **Region picker**: on first launch the app asks which region to check: Brazil, United States, Japan, Europe, United Kingdom, South Korea, Mexico, Australia, Saudi Arabia, Taiwan, Russia, China or Hong Kong.
 - **Notification in the region's language** (Portuguese for Brazil, Japanese for Japan, and so on). The app itself is always in English.
+- **Automatic updates**: checks GitHub for new releases when you open the app and every 12 hours. When there's a new version you get a notification, and one tap downloads and installs it (Android asks you to confirm).
 - Comes back after a reboot, and reappears if you swipe it away.
-- No accounts, no ads, no tracking. The app only calls the public firmware API.
+- No accounts, no ads, no tracking. The app only calls the public firmware API and the GitHub releases API.
 
 ## Install
 

@@ -17,6 +17,20 @@
     <string name="choose_region_first" translatable="false">Which region would you like to check?</string>
     <string name="region_unavailable" translatable="false">%1$s  (unavailable)</string>
 
+    <string name="update_channel_name" translatable="false">App updates</string>
+    <string name="update_notification_title" translatable="false">PS Firmware %1$s is available</string>
+    <string name="update_notification_text" translatable="false">Tap to update</string>
+    <string name="update_available" translatable="false">Update available</string>
+    <string name="update_version" translatable="false">Version %1$s is ready to install</string>
+    <string name="update_button" translatable="false">Update</string>
+    <string name="update_downloading" translatable="false">Downloading… %1$d%%</string>
+    <string name="update_downloading_unknown" translatable="false">Downloading…</string>
+    <string name="update_failed" translatable="false">Update failed</string>
+    <string name="update_allow_install" translatable="false">Allow PS Firmware to install updates, then tap Update again</string>
+    <string name="version_footer" translatable="false">Version %1$s  ·  Check for updates</string>
+    <string name="up_to_date" translatable="false">You\'re on the latest version</string>
+    <string name="update_check_failed" translatable="false">Could not check for updates</string>
+
     <!-- Notificação: traduzida para o idioma da região escolhida (values-xx). -->
     <string name="notif_label_latest">LATEST</string>
     <string name="notif_label_minimum">MINIMUM</string>
