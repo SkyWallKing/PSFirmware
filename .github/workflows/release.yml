@@ -1,0 +1,34 @@
+name: Release
+
+# Ao enviar uma tag vX.Y.Z, cria a release e anexa o PSFirmware.apk do commit da tag.
+# O APK é gerado localmente (sempre com a mesma chave de assinatura), para que as
+# atualizações instalem por cima das versões anteriores.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check APK
+        run: test -f PSFirmware.apk
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: PS Firmware ${{ github.ref_name }}
+          files: PSFirmware.apk
+          body: |
+            Download **PSFirmware.apk** below and open it on your Android phone (Android 8.0+).
+            If Android asks, allow installing apps from unknown sources.
+
+            See the [README](https://github.com/SkyWallKing/PSFirmware#readme) for details.
+
+            > This app was heavily vibe coded. Use at your own risk.

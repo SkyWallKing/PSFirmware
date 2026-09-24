@@ -3,8 +3,12 @@
 A small Android app that keeps an **ongoing notification** with the current PlayStation firmware status for the region you choose: the **latest** and **minimum** firmware versions, whether the region is **online**, and when the data was last updated.
 
 <p align="center">
-  <a href="https://github.com/SkyWallKing/PSFirmware/raw/main/PSFirmware.apk">
+  <a href="https://github.com/SkyWallKing/PSFirmware/releases/latest/download/PSFirmware.apk">
     <img src="https://img.shields.io/badge/Download-APK-0050B8?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" height="44">
+  </a>
+  <br>
+  <a href="https://github.com/SkyWallKing/PSFirmware/releases/latest">
+    <img src="https://img.shields.io/github/v/release/SkyWallKing/PSFirmware?label=latest%20release&color=0050B8" alt="Latest release">
   </a>
 </p>
 
@@ -28,7 +32,7 @@ A small Android app that keeps an **ongoing notification** with the current Play
 
 ## Install
 
-1. Download [`PSFirmware.apk`](https://github.com/SkyWallKing/PSFirmware/raw/main/PSFirmware.apk) on your phone (Android 8.0 or newer).
+1. Download [`PSFirmware.apk`](https://github.com/SkyWallKing/PSFirmware/releases/latest/download/PSFirmware.apk) from the [latest release](https://github.com/SkyWallKing/PSFirmware/releases/latest) on your phone (Android 8.0 or newer).
 2. Open it and allow installing from unknown sources if Android asks.
 3. Open **PS Firmware**, pick a region and tap **Enable notification**.
 
