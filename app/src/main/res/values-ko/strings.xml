@@ -3,7 +3,7 @@
     <string name="notif_label_latest">최신</string>
     <string name="notif_label_minimum">최소</string>
     <string name="notif_card_title">펌웨어 · %1$s</string>
-    <string name="notif_last_update">마지막 업데이트: %1$s</string>
+    <string name="notif_last_update">API 마지막 업데이트: %1$s</string>
     <string name="notif_last_fetch">확인 시각: %1$s</string>
     <string name="notif_offline">오프라인</string>
     <string name="notif_status_online">온라인</string>

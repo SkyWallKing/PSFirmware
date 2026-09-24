@@ -3,7 +3,7 @@
     <string name="notif_label_latest">الأحدث</string>
     <string name="notif_label_minimum">الأدنى</string>
     <string name="notif_card_title">البرنامج الثابت · %1$s</string>
-    <string name="notif_last_update">آخر تحديث: %1$s</string>
+    <string name="notif_last_update">آخر تحديث لواجهة API: %1$s</string>
     <string name="notif_last_fetch">تم التحقق في %1$s</string>
     <string name="notif_offline">غير متصل</string>
     <string name="notif_status_online">متصل</string>

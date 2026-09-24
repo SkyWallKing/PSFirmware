@@ -21,7 +21,7 @@
     <string name="notif_label_latest">LATEST</string>
     <string name="notif_label_minimum">MINIMUM</string>
     <string name="notif_card_title">Firmware · %1$s</string>
-    <string name="notif_last_update">Last update: %1$s</string>
+    <string name="notif_last_update">Last API update: %1$s</string>
     <string name="notif_last_fetch">Checked at %1$s</string>
     <string name="notif_offline">offline</string>
     <string name="notif_status_online">ONLINE</string>

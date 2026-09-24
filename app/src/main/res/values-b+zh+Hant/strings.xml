@@ -3,7 +3,7 @@
     <string name="notif_label_latest">最新</string>
     <string name="notif_label_minimum">最低</string>
     <string name="notif_card_title">韌體 · %1$s</string>
-    <string name="notif_last_update">最後更新：%1$s</string>
+    <string name="notif_last_update">API 最後更新：%1$s</string>
     <string name="notif_last_fetch">檢查於 %1$s</string>
     <string name="notif_offline">離線</string>
     <string name="notif_status_online">線上</string>
