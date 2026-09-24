@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notif_label_latest">ТЕКУЩАЯ</string>
+    <string name="notif_label_minimum">МИНИМУМ</string>
+    <string name="notif_card_title">Прошивка · %1$s</string>
+    <string name="notif_last_update">Последнее обновление: %1$s</string>
+    <string name="notif_last_fetch">Проверено в %1$s</string>
+    <string name="notif_offline">нет связи</string>
+    <string name="notif_status_online">ОНЛАЙН</string>
+    <string name="notif_status_unavailable">НЕДОСТУПНО</string>
+    <string name="notif_summary_title">Текущая %1$s · Мин. %2$s</string>
+    <string name="notif_summary_text">Статус: %1$s</string>
+</resources>

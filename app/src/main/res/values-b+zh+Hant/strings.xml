@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notif_label_latest">最新</string>
+    <string name="notif_label_minimum">最低</string>
+    <string name="notif_card_title">韌體 · %1$s</string>
+    <string name="notif_last_update">最後更新：%1$s</string>
+    <string name="notif_last_fetch">檢查於 %1$s</string>
+    <string name="notif_offline">離線</string>
+    <string name="notif_status_online">線上</string>
+    <string name="notif_status_unavailable">無法使用</string>
+    <string name="notif_summary_title">最新 %1$s · 最低 %2$s</string>
+    <string name="notif_summary_text">狀態：%1$s</string>
+</resources>

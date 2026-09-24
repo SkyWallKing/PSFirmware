@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notif_label_latest">최신</string>
+    <string name="notif_label_minimum">최소</string>
+    <string name="notif_card_title">펌웨어 · %1$s</string>
+    <string name="notif_last_update">마지막 업데이트: %1$s</string>
+    <string name="notif_last_fetch">확인 시각: %1$s</string>
+    <string name="notif_offline">오프라인</string>
+    <string name="notif_status_online">온라인</string>
+    <string name="notif_status_unavailable">사용 불가</string>
+    <string name="notif_summary_title">최신 %1$s · 최소 %2$s</string>
+    <string name="notif_summary_text">상태: %1$s</string>
+</resources>

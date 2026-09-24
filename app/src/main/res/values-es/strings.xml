@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notif_label_latest">ACTUAL</string>
+    <string name="notif_label_minimum">MÍNIMA</string>
+    <string name="notif_card_title">Firmware · %1$s</string>
+    <string name="notif_last_update">Última actualización: %1$s</string>
+    <string name="notif_last_fetch">Consultado a las %1$s</string>
+    <string name="notif_offline">sin conexión</string>
+    <string name="notif_status_online">EN LÍNEA</string>
+    <string name="notif_status_unavailable">NO DISPONIBLE</string>
+    <string name="notif_summary_title">Actual %1$s · Mínima %2$s</string>
+    <string name="notif_summary_text">Estado: %1$s</string>
+</resources>

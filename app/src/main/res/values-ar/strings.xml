@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notif_label_latest">الأحدث</string>
+    <string name="notif_label_minimum">الأدنى</string>
+    <string name="notif_card_title">البرنامج الثابت · %1$s</string>
+    <string name="notif_last_update">آخر تحديث: %1$s</string>
+    <string name="notif_last_fetch">تم التحقق في %1$s</string>
+    <string name="notif_offline">غير متصل</string>
+    <string name="notif_status_online">متصل</string>
+    <string name="notif_status_unavailable">غير متاح</string>
+    <string name="notif_summary_title">الأحدث %1$s · الأدنى %2$s</string>
+    <string name="notif_summary_text">الحالة: %1$s</string>
+</resources>

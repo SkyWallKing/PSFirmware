@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ps_blue_light">#FF0A84FF</color>
+    <color name="ps_blue">#FF0050B8</color>
+    <color name="ps_navy">#FF001A4D</color>
+    <color name="app_background">#FF070B16</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_tertiary">#80FFFFFF</color>
+    <color name="status_online">#FF34D399</color>
+    <color name="status_offline">#FFFBBF24</color>
+    <color name="status_unknown">#80FFFFFF</color>
+</resources>

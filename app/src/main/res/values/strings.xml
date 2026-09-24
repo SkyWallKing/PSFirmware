@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Interface do app: sempre em inglês, sem traduções. -->
+    <string name="app_name" translatable="false">PS Firmware</string>
+    <string name="channel_name" translatable="false">Firmware status</string>
+    <string name="channel_description" translatable="false">Ongoing notification with the firmware of the selected region</string>
+    <string name="enable_notification" translatable="false">Enable notification</string>
+    <string name="disable_notification" translatable="false">Disable notification</string>
+    <string name="refresh_now" translatable="false">Refresh now</string>
+    <string name="battery_settings" translatable="false">Battery optimization</string>
+    <string name="app_subtitle" translatable="false">Checks automatically every 5 minutes</string>
+    <string name="fetch_failed" translatable="false">Could not reach the API</string>
+    <string name="permission_denied" translatable="false">Allow notifications to show the status</string>
+    <string name="label_region" translatable="false">REGION</string>
+    <string name="no_region" translatable="false">Choose a region</string>
+    <string name="choose_region" translatable="false">Choose a region</string>
+    <string name="choose_region_first" translatable="false">Which region would you like to check?</string>
+    <string name="region_unavailable" translatable="false">%1$s  (unavailable)</string>
+
+    <!-- Notificação: traduzida para o idioma da região escolhida (values-xx). -->
+    <string name="notif_label_latest">LATEST</string>
+    <string name="notif_label_minimum">MINIMUM</string>
+    <string name="notif_card_title">Firmware · %1$s</string>
+    <string name="notif_last_update">Last update: %1$s</string>
+    <string name="notif_last_fetch">Checked at %1$s</string>
+    <string name="notif_offline">offline</string>
+    <string name="notif_status_online">ONLINE</string>
+    <string name="notif_status_unavailable">UNAVAILABLE</string>
+    <string name="notif_summary_title">Latest %1$s · Minimum %2$s</string>
+    <string name="notif_summary_text">Status: %1$s</string>
+</resources>

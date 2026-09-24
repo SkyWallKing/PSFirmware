@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notif_label_latest">最新</string>
+    <string name="notif_label_minimum">最低</string>
+    <string name="notif_card_title">固件 · %1$s</string>
+    <string name="notif_last_update">最后更新：%1$s</string>
+    <string name="notif_last_fetch">检查于 %1$s</string>
+    <string name="notif_offline">离线</string>
+    <string name="notif_status_online">在线</string>
+    <string name="notif_status_unavailable">不可用</string>
+    <string name="notif_summary_title">最新 %1$s · 最低 %2$s</string>
+    <string name="notif_summary_text">状态：%1$s</string>
+</resources>
