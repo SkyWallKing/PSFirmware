@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nome de app típico nos launchers (Launcher3/Pixel medido: ~14sp, ~7dp abaixo do ícone; One UI/MIUI parecidos). -->
+    <dimen name="icon_label_text">14sp</dimen>
+    <dimen name="icon_label_gap">7dp</dimen>
+</resources>

@@ -23,12 +23,14 @@ object UpdateChecker {
     private const val KEY_CHECKED_AT = "checkedAt"
     private const val KEY_VERSION = "version"
     private const val KEY_APK_URL = "apkUrl"
+    private const val KEY_NOTES = "notes"
     private const val KEY_NOTIFIED = "notifiedVersion"
 
     const val PERIODIC_INTERVAL_MS = 12 * 60 * 60 * 1000L
     const val ON_OPEN_INTERVAL_MS = 10 * 60 * 1000L
 
-    class Release(val version: String, val apkUrl: String)
+    /** [notes]: itens "- " do texto da release (vindos do changelog.md), vazio se não houver. */
+    class Release(val version: String, val apkUrl: String, val notes: List<String> = emptyList())
 
     private fun prefs(context: Context) = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
 
@@ -40,7 +42,8 @@ object UpdateChecker {
         val p = prefs(context)
         val version = p.getString(KEY_VERSION, null) ?: return null
         val url = p.getString(KEY_APK_URL, null) ?: return null
-        return if (isNewer(version, installedVersion(context))) Release(version, url) else null
+        val notes = p.getString(KEY_NOTES, null)?.lines()?.filter { it.isNotBlank() }.orEmpty()
+        return if (isNewer(version, installedVersion(context))) Release(version, url, notes) else null
     }
 
     /**
@@ -57,6 +60,7 @@ object UpdateChecker {
                 .putLong(KEY_CHECKED_AT, System.currentTimeMillis())
                 .putString(KEY_VERSION, latest?.version)
                 .putString(KEY_APK_URL, latest?.apkUrl)
+                .putString(KEY_NOTES, latest?.notes?.joinToString("\n"))
                 .apply()
         } catch (e: Exception) {
             Log.w(TAG, "Falha ao procurar atualizações", e)
@@ -84,7 +88,8 @@ object UpdateChecker {
             for (i in 0 until assets.length()) {
                 val asset = assets.getJSONObject(i)
                 if (asset.optString("name") == APK_NAME) {
-                    return Release(version, asset.getString("browser_download_url"))
+                    val notes = Changelog.items(json.optString("body"))
+                    return Release(version, asset.getString("browser_download_url"), notes)
                 }
             }
             return null

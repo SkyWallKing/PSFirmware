@@ -11,8 +11,8 @@ android {
         applicationId = "com.etawen.psfirmware"
         minSdk = 26
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.1.0"
+        versionCode = 4
+        versionName = "1.2.0"
     }
 
     buildTypes {
@@ -38,3 +38,14 @@ android {
         jvmTarget = "17"
     }
 }
+
+// Toda build de release deixa a APK na raiz como PSFirmware.apk (é ela que vai para a release do GitHub).
+// Tarefa simples (e não Copy): um Copy "into" a raiz tornaria a pasta inteira saída da tarefa.
+val copyReleaseApk by tasks.registering {
+    val apk = layout.buildDirectory.file("outputs/apk/release/app-release.apk")
+    val target = rootProject.layout.projectDirectory.file("PSFirmware.apk")
+    inputs.file(apk)
+    outputs.file(target)
+    doLast { apk.get().asFile.copyTo(target.asFile, overwrite = true) }
+}
+tasks.matching { it.name == "assembleRelease" }.configureEach { finalizedBy(copyReleaseApk) }

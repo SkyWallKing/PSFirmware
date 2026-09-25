@@ -10,4 +10,12 @@
     <color name="status_online">#FF34D399</color>
     <color name="status_offline">#FFFBBF24</color>
     <color name="status_unknown">#80FFFFFF</color>
+
+    <!-- Tema dinâmico: verde quando a mínima é igual à mais recente, vermelho quando não. -->
+    <color name="match_light">#FF22C55E</color>
+    <color name="match">#FF15803D</color>
+    <color name="match_dark">#FF052E16</color>
+    <color name="mismatch_light">#FFF87171</color>
+    <color name="mismatch">#FFC81E1E</color>
+    <color name="mismatch_dark">#FF450A0A</color>
 </resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Widget com cara de ícone de app (FirmwareIconWidget): quadrado com a versão mínima bem grande e o rótulo
+  "MÍNIMA" pequeno embaixo; o tema dinâmico muda só a cor.
+  Sem @android:id/background no root: o launcher não deve recortar/pintar a célula inteira.
+  Alinhamento com os ícones de app: o launcher centraliza na célula o bloco ícone + nome, então o quadrado
+  vem com um espaço invisível do tamanho de um nome embaixo (em sp, acompanha a fonte do sistema).
+  O ajuste fino do usuário (posição/tamanho) é aplicado por FirmwareIconWidget.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/icon_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!-- Tamanho ajustado pelo código no Android 12+ para ficar quadrado dentro da célula. -->
+    <FrameLayout
+        android:id="@+id/icon_box"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_card_small"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="-8dp"
+            android:layout_marginBottom="-10dp"
+            android:alpha="0.13"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_playstation" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="3dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="3dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/value_minimum"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="48sp"
+                android:autoSizeMinTextSize="8sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="—"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/label_minimum"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.28"
+                android:autoSizeMaxTextSize="11sp"
+                android:autoSizeMinTextSize="5sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.08"
+                android:maxLines="1"
+                android:text="@string/notif_label_minimum"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Espaço de um nome de app (invisível): sobe o quadrado para a altura dos ícones ao lado. -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/icon_label_gap"
+        android:importantForAccessibility="no"
+        android:maxLines="1"
+        android:text="@string/app_name"
+        android:textSize="@dimen/icon_label_text"
+        android:visibility="invisible" />
+</LinearLayout>

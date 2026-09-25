@@ -33,6 +33,7 @@ object FirmwareUpdater {
             false
         }
         if (FirmwareStore.isEnabled(context)) postNotification(context)
+        FirmwareWidget.updateAll(context)
         return ok
     }
 

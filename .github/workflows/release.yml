@@ -20,15 +20,32 @@ jobs:
       - name: Check APK
         run: test -f PSFirmware.apk
 
+      # As notas vêm da seção da versão em app/src/main/assets/changelog.md (a mesma que o app mostra).
+      # O app lê os itens "- " deste texto para mostrar as novidades antes de atualizar.
+      - name: Release notes
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v v="$VERSION" '/^## /{p = ($2 == v); next} p && /^- /' app/src/main/assets/changelog.md > notes.md
+          if [ ! -s notes.md ]; then
+            echo "::error::changelog.md has no entries for $VERSION"
+            exit 1
+          fi
+          {
+            echo "## What's new"
+            echo
+            cat notes.md
+            echo
+            echo "Download **PSFirmware.apk** below and open it on your Android phone (Android 8.0+)."
+            echo "If Android asks, allow installing apps from unknown sources."
+            echo
+            echo "See the [README](https://github.com/SkyWallKing/PSFirmware#readme) for details."
+            echo
+            echo "> This app was heavily vibe coded. Use at your own risk."
+          } > body.md
+
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           name: PS Firmware ${{ github.ref_name }}
           files: PSFirmware.apk
-          body: |
-            Download **PSFirmware.apk** below and open it on your Android phone (Android 8.0+).
-            If Android asks, allow installing apps from unknown sources.
-
-            See the [README](https://github.com/SkyWallKing/PSFirmware#readme) for details.
-
-            > This app was heavily vibe coded. Use at your own risk.
+          body_path: body.md

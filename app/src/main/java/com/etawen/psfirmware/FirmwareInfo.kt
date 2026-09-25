@@ -40,6 +40,12 @@ object FirmwareStore {
     private const val KEY_REGIONS = "regions"
     private const val KEY_ENABLED = "enabled"
     private const val KEY_ERROR = "lastError"
+    private const val KEY_DYNAMIC_THEME = "dynamicTheme"
+    private const val KEY_ICON_OFFSET = "iconOffset"
+    private const val KEY_ICON_SCALE = "iconScale"
+    const val ICON_OFFSET_RANGE = 24
+    const val ICON_SCALE_MIN = 60
+    const val ICON_SCALE_MAX = 140
 
     fun prefs(context: Context) = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
 
@@ -135,5 +141,25 @@ object FirmwareStore {
 
     fun setEnabled(context: Context, enabled: Boolean) {
         prefs(context).edit().putBoolean(KEY_ENABLED, enabled).apply()
+    }
+
+    /** Tema dinâmico: card verde/vermelho conforme a mínima é igual ou não à mais recente ([CardTheme]). */
+    fun isDynamicTheme(context: Context) = prefs(context).getBoolean(KEY_DYNAMIC_THEME, false)
+
+    fun setDynamicTheme(context: Context, enabled: Boolean) {
+        prefs(context).edit().putBoolean(KEY_DYNAMIC_THEME, enabled).apply()
+    }
+
+    /** Ajuste fino do widget estilo ícone: deslocamento vertical em dp (positivo = para baixo). */
+    fun iconOffset(context: Context) = prefs(context).getInt(KEY_ICON_OFFSET, 0)
+
+    /** Ajuste fino do widget estilo ícone: tamanho em % do automático. */
+    fun iconScale(context: Context) = prefs(context).getInt(KEY_ICON_SCALE, 100)
+
+    fun setIconTuning(context: Context, offset: Int, scale: Int) {
+        prefs(context).edit()
+            .putInt(KEY_ICON_OFFSET, offset.coerceIn(-ICON_OFFSET_RANGE, ICON_OFFSET_RANGE))
+            .putInt(KEY_ICON_SCALE, scale.coerceIn(ICON_SCALE_MIN, ICON_SCALE_MAX))
+            .apply()
     }
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget pequeno (ex.: 1x1): só cabe um número, e a prioridade é a versão MÍNIMA. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_card_small"
+    android:clipToOutline="true"
+    android:paddingStart="7dp"
+    android:paddingTop="6dp"
+    android:paddingEnd="7dp"
+    android:paddingBottom="7dp">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginBottom="-18dp"
+        android:alpha="0.13"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_playstation" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/status_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="●"
+                android:textSize="9sp" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/button_refresh"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="-3dp"
+                android:alpha="0.8"
+                android:contentDescription="@string/refresh_now"
+                android:padding="4dp"
+                android:src="@drawable/ic_refresh" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/value_minimum"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="48sp"
+            android:autoSizeMinTextSize="6sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/text_primary" />
+
+        <!-- Abaixo do número: na linha de cima, dividindo espaço com o botão, ficava cortado. -->
+        <!-- Tamanho automático: num 1x1 estreito, reticências deixariam só "MÍ…". -->
+        <TextView
+            android:id="@+id/label_minimum"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:autoSizeMaxTextSize="9sp"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.06"
+            android:maxLines="1"
+            android:textColor="@color/text_tertiary"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+    <!-- Presentes para reaproveitar o preenchimento (CardTexts.applyTo). -->
+    <TextView
+        android:id="@+id/label_latest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/value_latest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/value_status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/value_updated"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/label_card_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+</FrameLayout>

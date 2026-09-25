@@ -30,6 +30,33 @@
     <string name="version_footer" translatable="false">Version %1$s  ·  Check for updates</string>
     <string name="up_to_date" translatable="false">You\'re on the latest version</string>
     <string name="update_check_failed" translatable="false">Could not check for updates</string>
+    <string name="whats_new" translatable="false">What\'s new</string>
+    <string name="whats_new_in" translatable="false">What\'s new in %1$s</string>
+    <string name="update_whats_new" translatable="false">See what\'s new</string>
+    <string name="changelog_title" translatable="false">Changelog</string>
+    <string name="changelog_all" translatable="false">All versions</string>
+    <string name="changelog_version" translatable="false">Version %1$s</string>
+    <string name="dynamic_theme" translatable="false">Dynamic theme</string>
+    <string name="dynamic_theme_description" translatable="false">Green when the minimum version matches the latest, red when it doesn\'t. Colors the notification, its icon, the widget and this screen.</string>
+    <string name="preview_now" translatable="false">  ·  now</string>
+    <string name="preview_match" translatable="false">Minimum matches the latest: green</string>
+    <string name="preview_new_firmware" translatable="false">New firmware is out and the minimum is behind: red</string>
+    <string name="preview_caught_up" translatable="false">The minimum caught up with the latest: green again</string>
+    <string name="icon_widget_name" translatable="false">PS Firmware icon</string>
+    <string name="icon_widget_description" translatable="false">Looks like an app icon: just the minimum version, in large text.</string>
+    <string name="icon_tuning" translatable="false">Icon widget alignment</string>
+    <string name="icon_tuning_description" translatable="false">Each launcher places app icons a little differently. If the icon widget doesn\'t line up with your app icons, adjust it here.</string>
+    <string name="icon_tuning_offset" translatable="false">Vertical position: %1$s</string>
+    <string name="icon_tuning_scale" translatable="false">Size: %1$d%%</string>
+    <string name="icon_tuning_auto" translatable="false">automatic</string>
+    <string name="icon_tuning_up" translatable="false">%1$d dp up</string>
+    <string name="icon_tuning_down" translatable="false">%1$d dp down</string>
+    <string name="icon_widget_tip" translatable="false">Tip: you can adjust this widget\'s size and vertical position in the PS Firmware app, under Icon widget alignment.</string>
+    <string name="tips_channel_name" translatable="false">Tips</string>
+    <string name="icon_widget_tip_title" translatable="false">Icon widget added</string>
+    <string name="icon_widget_tip_text" translatable="false">If it doesn\'t line up with your app icons, adjust its size and vertical position in the app, under Icon widget alignment. Tap to open.</string>
+    <string name="icon_tuning_reset" translatable="false">Reset</string>
+    <string name="widget_description" translatable="false">Latest and minimum firmware for your region. Resize it to show more or less.</string>
 
     <!-- Notificação: traduzida para o idioma da região escolhida (values-xx). -->
     <string name="notif_label_latest">LATEST</string>

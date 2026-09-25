@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Redimensionável nos dois eixos até 1x1; o layout é escolhido pelo tamanho real (FirmwareWidget).
+  minWidth/minHeight definem o tamanho inicial até o Android 11; targetCell* do 12 em diante.
+  updatePeriodMillis mantém os dados em dia mesmo com a notificação desligada (mínimo de 30 min).
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="40dp"
+    android:minResizeHeight="40dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:updatePeriodMillis="1800000"
+    android:initialLayout="@layout/widget_card"
+    android:previewLayout="@layout/widget_card"
+    android:description="@string/widget_description" />

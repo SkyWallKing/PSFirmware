@@ -33,6 +33,14 @@ object NotificationFactory {
         nm.createNotificationChannel(channel)
     }
 
+    /** Abre o app; usado pela notificação e pelo widget. */
+    fun openAppIntent(context: Context): PendingIntent = PendingIntent.getActivity(
+        context, 0,
+        Intent(context, MainActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP),
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+    )
+
     fun build(context: Context): Notification {
         ensureChannel(context)
         // Textos no idioma da região escolhida, independente do idioma do aparelho/app.
@@ -43,13 +51,10 @@ object NotificationFactory {
         val expanded = RemoteViews(context.packageName, R.layout.notification_expanded)
         texts.applyTo(collapsed)
         texts.applyTo(expanded)
+        val theme = CardTheme.current(context)
+        collapsed.setInt(R.id.card_root, "setBackgroundResource", theme.card)
+        expanded.setInt(R.id.card_root, "setBackgroundResource", theme.card)
 
-        val openApp = PendingIntent.getActivity(
-            context, 0,
-            Intent(context, MainActivity::class.java)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP),
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
-        )
         // No Android 14+ o usuário pode dispensar a notificação; ela é recolocada em seguida.
         val repost = PendingIntent.getBroadcast(
             context, 2,
@@ -68,14 +73,15 @@ object NotificationFactory {
             .setContentTitle(texts.summaryTitle)
             .setContentText(texts.summaryText)
             .setSubText(subText.ifEmpty { null })
-            .setColor(context.getColor(R.color.ps_blue))
+            // Cor do ícone e do fundo (colorizado) acompanha o tema dinâmico.
+            .setColor(context.getColor(theme.accent))
             .setColorized(true)
             .setOngoing(true)
             .setOnlyAlertOnce(true)
             .setShowWhen(false)
             .setCategory(Notification.CATEGORY_STATUS)
             .setVisibility(Notification.VISIBILITY_PUBLIC)
-            .setContentIntent(openApp)
+            .setContentIntent(openAppIntent(context))
             .setDeleteIntent(repost)
             .build()
     }

@@ -44,6 +44,29 @@
             android:exported="false" />
 
         <receiver
+            android:name=".FirmwareWidget"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/firmware_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".FirmwareIconWidget"
+            android:exported="false"
+            android:label="@string/icon_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/firmware_icon_widget_info" />
+        </receiver>
+
+        <receiver
             android:name=".BootReceiver"
             android:exported="true">
             <intent-filter>
